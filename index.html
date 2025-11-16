@@ -6,6 +6,43 @@
   <title>Association J'mouv</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
+    @media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-bottom: 2px solid #a786ff;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px 5px;
+  }
+
+  .sidebar h2 {
+    display: none; /* On masque le titre pour gagner de la place */
+  }
+
+  .sidebar a {
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 0.9em;
+    width: auto;
+  }
+
+  .content {
+    margin-right: 0; /* Plus de sidebar à droite */
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+}
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -256,4 +293,3 @@
   </script>
 </body>
 </html>
-

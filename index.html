@@ -3,156 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>J'mouv</title>
-  <link rel="icon" type="image/png" href="photo j'mouv.png">
+  <title>Association J'mouv</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ff0000, #0000ff);
-      color: white;
       margin: 0;
       padding: 0;
+      display: flex;
+      background: linear-gradient(135deg, #1a1a1a, #3a2d5f, #1a1a1a);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* --- MENU LATERAL A DROITE --- */
+    .sidebar {
+      width: 240px;
+      background: rgba(0,0,0,0.85);
+      border-left: 2px solid #a786ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.4em;
+      color: #a786ff;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 12px 0;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .sidebar a:hover {
+      background: #a786ff;
+      color: #000;
+    }
+
+    /* --- CONTENU PRINCIPAL --- */
+    .content {
+      flex: 1;
+      padding: 40px;
+      margin-right: 240px; /* espace pour la sidebar */
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-      padding: 8px 12px;
-      border: 2px solid white;
-      border-radius: 20px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: white;
-      color: black;
-    }
-
-    main {
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    section {
       margin-bottom: 30px;
     }
 
-    .activities, .comment-section, .gerants {
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+    header h1 {
+      font-size: 2.4em;
+      font-weight: 600;
+      margin: 0;
     }
 
-    .activities:hover, .comment-section:hover, .gerants:hover {
-      transform: scale(1.02);
+    header p {
+      color: #ccc;
+      font-size: 1.1em;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+    
+
+    section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #a786ff;
+      margin-bottom: 15px;
     }
 
     ul {
       padding-left: 20px;
     }
 
-    textarea {
-      width: 60%;
-      height: 50px;
-      margin-bottom: 10px;
+    textarea, input[type="text"] {
+      width: 100%;
+      margin-bottom: 12px;
       padding: 12px;
-      border-radius: 5px;
+      border-radius: 8px;
       border: none;
-      resize: none;
       font-family: 'Poppins', sans-serif;
     }
 
     button {
-      background-color: #ffffff;
-      color: #000000;
-      padding: 10px 20px;
+      background: #a786ff;
+      color: white;
+      padding: 12px 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s;
+      font-size: 1em;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #dddddd;
+      background: #fff;
+      color: #000;
     }
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
 
-  .social-icons img {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.2s;
-}
-
-    .social-icons img:hover {
-      transform: scale(1.1);
-}
-
-    .comment {
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 10px;
-      border-radius: 8px;
+    #statusMsg {
       margin-top: 10px;
-      border-left: 3px solid #fff;
-    }
-
-    .timestamp {
-      font-size: 0.8em;
-      color: #ccc;
-      margin-top: 5px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      button, textarea {
-        width: 100%;
-      }
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
- <header>
-    <div class="header-content">
-      <div class="header-text">
-        <h1>Association J'mouv</h1>
-        <p>Des journées sportives, des sorties et plein d'activités pour les jeunes !</p>
-        <p>Association de Jeumont (59460)</p>
-    </div>
-     <div class="social-icons">
+  <div class="sidebar">
+    <h2>Navigation</h2>
+    <a href="cquoi.html">Créer une Asso Junior</a>
+    <a href="gerants.html">Les Gérants</a>
+    <a href="actu.html">Actualité</a>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <div class="content">
+    <header>
+      <h1>Association J'mouv</h1>
+      <p>Des journées sportives, des sorties et plein d'activités pour les jeunes !</p>
+      <p>Association de Jeumont (59460)</p>
+      <div class="social-icons">
         <a href="https://www.instagram.com/jmouv59460" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
         </a>
@@ -160,110 +167,93 @@
           <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
         </a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <nav>
-    <a href="cquoi.html">Creation de notre association junior</a>
-    <a href="gerants.html">Les Gérants</a>
-    <a href="actu.html">Actualité</a>
-
-  </nav>
-
-  <main>
-    <section class="activities">
+    <section>
       <h2>Nos activités</h2>
-      <section class="activities">
-        <ul>
-          <li>🏀 <strong>Activités sportives et ludiques</strong>
-            <ul>
-              <li>Tournois sportifs : football, basketball, ping-pong...</li>
-              <li>Tournois d’échecs et jeux de cartes</li>
-              <li>Jeux de rôle, escape games éducatifs</li>
-              <li>Après-midis jeux de société</li>
-              <li>Soirées jeux vidéo</li>
-            </ul>
-          </li>
-      
-          <li>🎨 <strong>Ateliers artistiques et créatifs</strong>
-            <ul>
-              <li>Dessin, peinture, DIY (Do It Yourself)</li>
-              <li>Danse : hip-hop, afro, danse moderne</li>
-              <li>Initiation à la musique : percussions, guitare, chant</li>
-              <li>Ateliers photo, montage vidéo, création de contenus</li>
-              <li>Ateliers de cuisine et pâtisserie</li>
-            </ul>
-          </li>
-      
-          <li>🎓 <strong>Soutien éducatif et développement personnel</strong>
-            <ul>
-              <li>Aide aux devoirs et soutien scolaire</li>
-              <li>Débats et cafés-discussions sur des thèmes de société</li>
-              <li>Projections de films suivies d’échanges</li>
-              <li>Ateliers bien-être : gestion du stress, relaxation, sport santé</li>
-            </ul>
-          </li>
-      
-          <li>🌍 <strong>Citoyenneté, engagement et solidarité</strong>
-            <ul>
-              <li>Activités intergénérationnelles et inclusives (avec personnes âgées ou en situation de handicap)</li>
-              <li>Projets écologiques :
-                <ul>
-                  <li>Nettoyage de quartier</li>
-                  <li>Jardin partagé</li>
-                  <li>Recyclage</li>
-                </ul>
-              </li>
-              <li>Actions solidaires : collectes de vêtements, maraudes</li>
-              <li>Activités de sensibilisation :
-                <ul>
-                  <li>Égalité femmes-hommes</li>
-                  <li>Lutte contre le racisme et les discriminations</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-      
-          <li>🎭 <strong>Culture et ouverture au monde</strong>
-            <ul>
-              <li>Sorties culturelles : musées, expositions, cinéma, théâtre</li>
-              <li>Journées à thème : artistiques, sportives, multiculturelles</li>
-              <li>Atelier Web radio</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-      <main>
-        <section>
-          <h2>Pose ta question</h2>
-          <form id="contactForm">
-            <input type="text" name="name" placeholder="Ton prénom" required><br><br>
-            <textarea name="message" placeholder="Écris ton message ici" required></textarea><br><br>
-            <button type="submit">Envoyer</button>
-          </form>
-          <div id="statusMsg"></div>
-        </section>
-    
-  <main>
-     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("WBQprGj4QQkm4PZLQ");
-  })();
+      <ul>
+        <li>🏀 <strong>Activités sportives et ludiques</strong>
+          <ul>
+            <li>Tournois sportifs : football, basketball, ping-pong...</li>
+            <li>Tournois d’échecs et jeux de cartes</li>
+            <li>Jeux de rôle, escape games éducatifs</li>
+            <li>Après-midis jeux de société</li>
+            <li>Soirées jeux vidéo</li>
+          </ul>
+        </li>
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const form = this;
+        <li>🎨 <strong>Ateliers artistiques et créatifs</strong>
+          <ul>
+            <li>Dessin, peinture, DIY</li>
+            <li>Danse : hip-hop, afro, moderne</li>
+            <li>Musique : percussions, guitare, chant</li>
+            <li>Photo, montage vidéo, création de contenus</li>
+            <li>Cuisine et pâtisserie</li>
+          </ul>
+        </li>
 
-      emailjs.sendForm("service_ayv3z4f", "template_x89w8uc", form)
-        .then(function () {
-          document.getElementById("statusMsg").innerText = "✅ Message envoyé !";
-          form.reset();
-        }, function (error) {
-          document.getElementById("statusMsg").innerText = "❌ Une erreur s'est produite.";
-          console.error("Erreur EmailJS :", error);
-        });
+        <li>🎓 <strong>Soutien éducatif et développement personnel</strong>
+          <ul>
+            <li>Aide aux devoirs</li>
+            <li>Débats et cafés-discussions</li>
+            <li>Projections de films suivies d’échanges</li>
+            <li>Ateliers bien-être : gestion du stress, relaxation, sport santé</li>
+          </ul>
+        </li>
+
+        <li>🌍 <strong>Citoyenneté et solidarité</strong>
+          <ul>
+            <li>Activités intergénérationnelles et inclusives</li>
+            <li>Projets écologiques : nettoyage, jardin, recyclage</li>
+            <li>Actions solidaires : collectes, maraudes</li>
+            <li>Sensibilisation : égalité femmes-hommes, lutte contre les discriminations</li>
+          </ul>
+        </li>
+
+        <li>🎭 <strong>Culture et ouverture</strong>
+          <ul>
+            <li>Sorties culturelles : musées, cinéma, théâtre</li>
+            <li>Journées à thème : artistiques, sportives, multiculturelles</li>
+            <li>Atelier Web radio</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Pose ta question</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Ton prénom" required>
+        <textarea name="message" placeholder="Écris ton message ici" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+      <div id="statusMsg"></div>
+    </section>
+  </div>
+
+  <!-- SCRIPT EMAILJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("WBQprGj4QQkm4PZLQ"); 
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const form = this;
+
+        emailjs.sendForm("service_ayv3z4f", "template_x89w8uc", form)
+          .then(function () {
+            document.getElementById("statusMsg").innerText = "✅ Message envoyé avec succès !";
+            form.reset();
+          }, function (error) {
+            document.getElementById("statusMsg").innerText = "❌ Une erreur s'est produite. Réessaie.";
+            console.error("Erreur EmailJS :", error);
+          });
+      });
     });
-  });
-</script>
+  </script>
+</body>
+</html>
+

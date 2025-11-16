@@ -2,68 +2,147 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gérants - J'mouv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Association J'mouv</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ff0000, #0000ff);
-      color: white;
+      display: flex;
+      background: linear-gradient(135deg, #1a1a1a, #3a2d5f, #1a1a1a);
+      color: #fff;
+      min-height: 100vh;
     }
+
+
+    .sidebar {
+      width: 240px;
+      background: rgba(0,0,0,0.85);
+      border-left: 2px solid #a786ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.4em;
+      color: #a786ff;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 12px 0;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .sidebar a:hover {
+      background: #a786ff;
+      color: #000;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      margin-right: 240px; 
+    }
+
     header {
       text-align: center;
-      padding: 40px 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      margin-bottom: 30px;
     }
+
     header h1 {
+      font-size: 2.4em;
+      font-weight: 600;
       margin: 0;
-      font-size: 2.5em;
     }
-    main {
-      padding: 30px;
-      background-color: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    header p {
+      color: #ccc;
+      font-size: 1.1em;
     }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+    
+
+    section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
     h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
+      color: #a786ff;
+      margin-bottom: 15px;
     }
+
     ul {
-      list-style-type: none;
-      padding-left: 0;
+      padding-left: 20px;
     }
-    li {
-      margin-bottom: 10px;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 15px;
-      border-radius: 10px;
-      transition: background 0.3s;
+
+    textarea, input[type="text"] {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
     }
-    li:hover {
-      background-color: rgba(255,255,255,0.2);
-    }
-    a {
-      display: inline-block;
-      margin: 20px auto;
-      text-decoration: none;
-      background-color: white;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 20px;
+
+    button {
+      background: #a786ff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s;
+      font-size: 1em;
+      transition: 0.3s;
     }
-    a:hover {
-      background-color: #ddd;
+
+    button:hover {
+      background: #fff;
+      color: #000;
     }
+
+    #statusMsg {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
     .bottom-image {
       display: block;
       margin: auto ;
@@ -73,7 +152,7 @@
     .logo-container {
       position: absolute;
       top: 20px;
-      right: 20px;
+      left: 20px;
     }
 
     .logo-container img {
@@ -86,21 +165,35 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Les Gérants</h1>
-    <div class="logo-container">
+  <div class="sidebar">
+    <h2>Gérants</h2>
+    <a href="index.html">Acceuil</a>
+    <a href="cquoi.html">Les Gérants</a>
+    <a href="actu.html">Actualité</a>
+  </div>
+
+
+  <div class="content">
+    <header>
+      <h1>Gérants</h1>
+       <div class="logo-container">
       <img src="photo j'mouv.png" alt="Logo de l'association">
     </div>
-  </header>
+      <div class="social-icons">
+      
+      </div>
+    </header>
 
   <main>
     <h2>Équipe de gestion</h2>
     <ul>
       <li>👤 Kylian Legrand</li>
+      <li>👤 Louis Crevisier</li>
+      <li>👤 Guillaume Detourbe</li>
       <li>👤 Nesrine Benghanem</li>
       <li>👤 Lilou Pire</li>
     </ul>
-    <img src="lkn.png" alt="Image J'mouv" class="bottom-image">
+    <img src="lkng.png" alt="Image J'mouv" class="bottom-image">
     <a href="index.html">Retour à l'accueil</a>
   </main>
 </body>

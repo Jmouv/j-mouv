@@ -2,83 +2,157 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gérants - J'mouv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Association J'mouv</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ff0000, #0000ff);
-      color: white;
+      display: flex;
+      background: linear-gradient(135deg, #1a1a1a, #3a2d5f, #1a1a1a);
+      color: #fff;
+      min-height: 100vh;
     }
+
+
+    .sidebar {
+      width: 240px;
+      background: rgba(0,0,0,0.85);
+      border-left: 2px solid #a786ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.4em;
+      color: #a786ff;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 12px 0;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .sidebar a:hover {
+      background: #a786ff;
+      color: #000;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      margin-right: 240px; 
+    }
+
     header {
       text-align: center;
-      padding: 40px 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-      position: relative;
+      margin-bottom: 30px;
     }
+
     header h1 {
+      font-size: 2.4em;
+      font-weight: 600;
       margin: 0;
-      font-size: 2.5em;
     }
-    main {
-      padding: 30px;
-      background-color: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    header p {
+      color: #ccc;
+      font-size: 1.1em;
     }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+    
+
+    section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
     h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
+      color: #a786ff;
+      margin-bottom: 15px;
     }
+
     ul {
-      list-style-type: none;
-      padding-left: 0;
+      padding-left: 20px;
     }
-    li {
-      margin-bottom: 10px;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 15px;
-      border-radius: 10px;
-      transition: background 0.3s;
+
+    textarea, input[type="text"] {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
     }
-    li:hover {
-      background-color: rgba(255,255,255,0.2);
-    }
-    a {
-      display: inline-block;
-      margin: 20px auto;
-      text-decoration: none;
-      background-color: white;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 20px;
+
+    button {
+      background: #a786ff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s;
+      font-size: 1em;
+      transition: 0.3s;
     }
-    a:hover {
-      background-color: #ddd;
+
+    button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    #statusMsg {
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     .bottom-image {
       display: block;
-      width: 50%;
-      max-height: 200px;
-      margin: 40px auto 20px auto;
+      margin: auto ;
       border-radius: 10px;
       object-fit: cover;
     }
-
     .logo-container {
       position: absolute;
       top: 20px;
-      right: 20px;
+      left: 20px;
     }
 
     .logo-container img {
@@ -91,100 +165,69 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Creation de notre association junior</h1>
-    <div class="logo-container">
+  <div class="sidebar">
+    <h2>Navigation</h2>
+    <a href="index.html">Acceuil</a>
+    <a href="gerants.html">Les Gérants</a>
+    <a href="actu.html">Actualité</a>
+  </div>
+
+
+  <div class="content">
+    <header>
+      <h1>Creation de notre junior asso</h1>
+       <div class="logo-container">
       <img src="photo j'mouv.png" alt="Logo de l'association">
     </div>
-  </header>
+      <div class="social-icons">
+      
+      </div>
+    </header>
 
-  <main>
+    <section>
+    <h3>Créer une Junior Association à Jeumont : une initiative porteuse de sens</h3>
 
-<h3>Créer une Junior Association à Jeumont : une initiative porteuse de sens</h3>
-<p>
-  L’idée de créer une Junior Association à Jeumont est née d’un constat simple : les jeunes manquent d’activités extérieures et de lieux pour se retrouver. Beaucoup restent isolés chez eux, les liens sociaux se distendent et se réduisent souvent à trop d’échanges virtuels.<br>
-  Face à ce besoin, nous avons décidé d’agir, en créant une structure qui nous permette de redonner du dynamisme à la jeunesse de Jeumont, de recréer du lien, de favoriser l’entraide et de porter des projets collectifs.
-</p>
+      <h3>J’mouv : Une Junior Association pour faire bouger Jeumont</h3>
+      <p>
+        Face à l’isolement des jeunes et au manque d’activités, nous avons créé <strong>J’mouv</strong> : une Junior Association pour redonner du lien, encourager l’engagement et porter des projets collectifs à Jeumont.
+      </p>
 
-<h4>1. Répondre à un besoin local</h4>
-<ul>
-  <li>Recréer des espaces d’échange et d’activités pour les jeunes de Jeumont et alentours.</li>
-  <li>Lutter contre l’isolement et renforcer les liens sociaux.</li>
-  <li>Redonner envie de s’impliquer localement.</li>
-</ul>
+      <h4>Nos objectifs</h4>
+      <ul>
+        <li>Créer du lien entre les jeunes, lutter contre l’isolement.</li>
+        <li>Encourager l’engagement citoyen et local.</li>
+        <li>Monter des projets dans un cadre légal et structuré.</li>
+        <li>Accéder à des financements pour concrétiser nos idées.</li>
+        <li>Développer des compétences utiles : gestion, communication, travail en équipe.</li>
+      </ul>
 
-<h4>2. Offrir un cadre structurant à nos projets</h4>
-<ul>
-  <li>La Junior Association nous permet de porter nos initiatives dans un cadre légal et simplifié.</li>
-  <li>Elle facilite l’organisation d’événements, la réservation de lieux, ou encore les demandes de budget.</li>
-  <li>Évoluer en partenariat avec les instances locales pour mener nos animations.</li>
-</ul>
+      <h4>Un nom porteur : J’mouv</h4>
+      <p>
+        Pour « Jeunesse en mouvement » et « Jeumont en mouvement » : symbole d’action, d’énergie et de solidarité.
+      </p>
 
-<h4>3. Gagner en crédibilité</h4>
-<ul>
-  <li>Grâce à cette reconnaissance officielle, nos actions seront prises au sérieux par les partenaires : mairie, associations locales, entreprises…</li>
-  <li>Cela nous ouvre des portes et crédibilise notre engagement.</li>
-</ul>
+      <h4>Notre équipe</h4>
+      <ul>
+        <li><strong>Kylian</strong> (communication) : passionné de numérique.</li>
+        <li><strong>Lilou</strong> (trésorière) : rigoureuse et organisée.</li>
+        <li><strong>Nesrine</strong> (présidente) : à l’origine du projet, moteur de l’équipe.</li>
+        <li><strong>Philippe</strong> (accompagnateur) : soutien expérimenté et bienveillant.</li>
+      </ul>
 
-<h4>4. Accéder à des financements</h4>
-<ul>
-  <li>Nous pourrons solliciter des subventions auprès de la municipalité, du département ou même de l’État.</li>
-  <li>Ces aides nous permettront de concrétiser nos projets de façon autonome.</li>
-</ul>
+      <h4>Nos valeurs</h4>
+      <ul>
+        <li>Respect</li>
+        <li>Entraide</li>
+        <li>Solidarité</li>
+        <li>Écologie</li>
+        <li>Vivre ensemble</li>
+      </ul>
 
-<h4>5. Valoriser notre engagement des jeunes</h4>
-<ul>
-  <li>Être actif dans une association est un vrai plus pour un CV.</li>
-  <li>Cela montre que nous savons prendre des responsabilités, travailler en équipe, gérer un budget et organiser des actions concrètes.</li>
-</ul>
-
-<h4>6. Encourager et être un exemple de la citoyenneté et la coopération</h4>
-<ul>
-  <li>Nous apprenons à débattre, à écouter et à prendre des décisions ensemble, dans un cadre démocratique.</li>
-  <li>Ce sont des compétences utiles pour la vie de tous les jours, mais aussi pour notre avenir professionnel.</li>
-</ul>
-
-<h4>7. Créer un espace d’écoute, de partage et d'entraide</h4>
-<ul>
-  <li>La Junior Association sera un lieu d’accueil et de soutien entre jeunes.</li>
-  <li>Nous y porterons des valeurs fortes : respect, solidarité, partage, épanouissement, écologie et vivre ensemble.</li>
-</ul>
-
-<h4>8. Un nom porteur de sens : J’mouv</h4>
-<p>
-  Ce nom s’est imposé naturellement : "J’mouv", comme "Jeunesse en mouvement" et aussi « Jeumont en mouvement ».  
-  Il reflète notre volonté de faire bouger les choses, de ne pas rester passifs, et de montrer que la jeunesse de Jeumont est pleine d’énergie, d’idées et d’envies.
-</p>
-
-<h3>Comment organisons-nous notre Junior Association ?</h3>
-<p>
-  Nous sommes trois amis liés depuis 2020 par une belle amitié, fondée sur le respect, la solidarité et l’envie de construire ensemble.<br>
-  Dès le départ, il nous a semblé naturel d’évoluer dans un fonctionnement démocratique, où chacun aurait un rôle bien défini, selon ses compétences et ses qualités.
-</p>
-
-<ul>
-  <li>
-    <strong>Kylian</strong>, futur titulaire d’un bac CIEL, possède de solides compétences techniques et une vraie aisance dans le domaine numérique. C’est donc tout naturellement qu’il a pris en charge la communication de notre Junior Association.
-  </li>
-  <li>
-    <strong>Lilou</strong>, organisée, rigoureuse et toujours à l’écoute, s’est imposée comme une gestionnaire exemplaire. Elle occupe avec brio le poste de trésorière, veillant à la bonne tenue de nos comptes et à l’équilibre financier de nos projets.
-  </li>
-  <li>
-    <strong>Nesrine</strong>, à l’origine de cette belle initiative, s’est investie dès le début dans la réflexion et la mise en place du projet. Elle occupe le rôle de présidente, en veillant à prendre les décisions collectivement, dans le respect des idées et de la parole de chacun.
-  </li>
-  <li>
-    Dès le lancement de notre initiative, <strong>Philippe</strong> a cru en notre projet et a pris notre engagement très au sérieux. C’est donc en toute logique et en pleine confiance que nous lui avons demandé d’être notre accompagnateur.<br>
-    Son expertise, sa bienveillance et sa capacité à structurer des actions seront des atouts précieux pour nous accompagner dans la mise en œuvre et le développement de notre engagement.
-  </li>
-</ul>
-
-<p>
-  Ensemble, nous formons une équipe soudée, où la confiance, le dialogue, l’engagement commun, le partage et la joie sont au cœur de notre organisation.
-</p>
-</section>
-<a href="index.html">Retour à l'accueil</a>
-
-</main>
+      <p>
+        Ensemble, nous formons une équipe soudée, où la confiance, le dialogue, l’engagement commun, le partage et la joie sont au cœur de notre organisation.
+      </p>
+      
+    </section>
 
 </body>
 </html>
